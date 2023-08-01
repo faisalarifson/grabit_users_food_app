@@ -29,6 +29,19 @@ class _LoginScreenState extends State<LoginScreen> {
 
 //form validation for login
   formValidation() {
+
+    if(! emailController.text.trim().contains("@gmail.com")){
+
+      showDialog(
+        context: context,
+        builder: (c) {
+          return const ErrorDialog(
+            message: "Email is not valid",
+          );
+        },
+      );
+      return;
+    }
     if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
       //login
       loginNow();

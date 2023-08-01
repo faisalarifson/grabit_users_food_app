@@ -184,7 +184,7 @@ class _CartScreenState extends State<CartScreen> {
                     child: cartProvider.count == 0
                         ? Container()
                         : Text(
-                            "Total Price: ${"\$" + amountProvider.tAmount.toString()}",
+                            "Total Price: ${"Rs " + amountProvider.tAmount.toString()}",
                             style: GoogleFonts.lato(
                               textStyle: const TextStyle(
                                 fontSize: 20,

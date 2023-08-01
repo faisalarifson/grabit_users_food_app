@@ -10,13 +10,15 @@ class OrderCard extends StatelessWidget {
   final List<DocumentSnapshot>? data;
   final String? orderID;
   final List<String>? seperateQuantitiesList;
+  bool isFromHistory;
 
-  const OrderCard({
+   OrderCard({
     Key? key,
     this.itemCount,
     this.data,
     this.orderID,
     this.seperateQuantitiesList,
+    this.isFromHistory=false,
   }) : super(key: key);
 
   @override
@@ -26,7 +28,7 @@ class OrderCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: ((context) => OrderDetailsScreen(orderID: orderID)),
+            builder: ((context) => OrderDetailsScreen(orderID: orderID,isFromHistory: isFromHistory,)),
           ),
         );
       },
@@ -98,7 +100,7 @@ Widget placedOrderDesignWidget(
               ),
               const SizedBox(width: 10),
               const Text(
-                "\$ ",
+                "Rs  ",
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.blue,

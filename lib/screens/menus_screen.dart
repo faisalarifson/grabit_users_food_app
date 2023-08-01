@@ -5,6 +5,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:users_food_app/assistantMethods/assistant_methods.dart';
+import 'package:users_food_app/screens/home_screen.dart';
 import 'package:users_food_app/widgets/design/menus_design.dart';
 
 import '../models/menus.dart';
@@ -46,7 +47,7 @@ class _MenusScreenState extends State<MenusScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (c) => const SplashScreen(),
+                builder: (c) => const HomeScreen(),
               ),
             );
 

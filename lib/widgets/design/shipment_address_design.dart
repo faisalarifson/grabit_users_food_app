@@ -7,7 +7,9 @@ import 'package:users_food_app/splash_screen/splash_screen.dart';
 class ShipmentAddressDesign extends StatelessWidget {
   final Address? model;
 String orderId;
-   ShipmentAddressDesign({Key? key, this.model,required this.orderId}) : super(key: key);
+  bool isFromHistory;
+
+   ShipmentAddressDesign({Key? key, this.model,required this.orderId, this.isFromHistory=false,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +65,7 @@ String orderId;
             textAlign: TextAlign.justify,
           ),
         ),
-        Padding(
+        isFromHistory?SizedBox.shrink():   Padding(
           padding: const EdgeInsets.all(10.0),
           child: Center(
             child: InkWell(
@@ -110,9 +112,9 @@ double lng=0;
                 ),
                 width: MediaQuery.of(context).size.width - 40,
                 height: 50,
-                child: const Center(
+                child:  Center(
                     child: Text(
-                  "Track Order",
+                      "Track Order",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 15,

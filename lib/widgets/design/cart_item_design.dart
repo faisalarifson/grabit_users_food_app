@@ -110,7 +110,7 @@ class _CartItemDesignState extends State<CartItemDesign> {
                         ),
                       ),
                       Text(
-                        "\$",
+                        "Rs ",
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
                             fontSize: 16,

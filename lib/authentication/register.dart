@@ -50,6 +50,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
 //Form Validation
   Future<void> signUpFormValidation() async {
     //checking if user selected image
+
+    if(! emailController.text.trim().contains("@gmail.com")){
+
+      showDialog(
+        context: context,
+        builder: (c) {
+          return const ErrorDialog(
+            message: "Email is not valid",
+          );
+        },
+      );
+      return;
+    }
+
     if (imageXFile == null) {
       setState(
         () {

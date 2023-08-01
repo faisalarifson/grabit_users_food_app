@@ -59,6 +59,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                         builder: (c, snap) {
                           return snap.hasData
                               ? OrderCard(
+                            isFromHistory: true,
                                   itemCount: snap.data!.docs.length,
                                   data: snap.data!.docs,
                                   orderID: snapshot.data!.docs[index].id,

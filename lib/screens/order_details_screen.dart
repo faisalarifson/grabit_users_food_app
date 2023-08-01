@@ -10,8 +10,10 @@ import '../global/global.dart';
 
 class OrderDetailsScreen extends StatefulWidget {
   final String? orderID;
+  bool isFromHistory;
 
-  const OrderDetailsScreen({Key? key, this.orderID}) : super(key: key);
+   OrderDetailsScreen({Key? key, this.orderID,    this.isFromHistory=false,
+   }) : super(key: key);
 
   @override
   State<OrderDetailsScreen> createState() => _OrderDetailsScreenState();
@@ -51,7 +53,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              "Total Amount: " "\$ " +
+                              "Total Amount: " "Rs  " +
                                   dataMap["totalAmount"].toString(),
                               style: const TextStyle(
                                 fontSize: 24,
@@ -96,6 +98,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                           builder: (c, snapshot) {
                             return snapshot.hasData
                                 ? ShipmentAddressDesign(
+                              isFromHistory: widget.isFromHistory,
                                     model: Address.fromJson(snapshot.data!
                                         .data()! as Map<String, dynamic>),
                               orderId:widget.orderID.toString() ,
